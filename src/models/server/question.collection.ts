@@ -57,7 +57,7 @@ export default async function createQuestionCollection() {
       "title",
       IndexType.Fulltext,
       ["title"],
-      ["asc"]
+      ["ASC"]
     ),
     databases.createIndex(
       db,
@@ -65,7 +65,7 @@ export default async function createQuestionCollection() {
       "content",
       IndexType.Fulltext,
       ["content"],
-      ["asc"]
+      ["ASC"]
     ),
   ]);
 }
