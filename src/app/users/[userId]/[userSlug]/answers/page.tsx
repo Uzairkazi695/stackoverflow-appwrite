@@ -28,8 +28,8 @@ export default async function Page({
       const question = await databases.getDocument(
         db,
         questionCollection,
-        ans.questionId,
-        [Query.select(["title"])]
+        ans.questionId
+        // [Query.select(["content"])]
       );
       return { ...ans, question };
     })
@@ -43,10 +43,7 @@ export default async function Page({
         {answers.documents.map((ans) => (
           <div key={ans.$id}>
             <div className="max-h-40 overflow-auto">
-              <MarkdownEditor
-                source={ans.content}
-                className="rounded-lg p-4"
-              />
+              <MarkdownEditor source={ans.content} className="rounded-lg p-4" />
             </div>
             <Link
               href={`/questions/${ans.questionId}/${slugify(

@@ -33,7 +33,7 @@ export default async function Page({
       const questionOfTypeQuestion =
         vote.type === "question"
           ? await databases.getDocument(db, questionCollection, vote.typeId, [
-              Query.select(["title"]),
+            //   Query.select(["content"]),
             ])
           : null;
       if (questionOfTypeQuestion) {
@@ -53,7 +53,7 @@ export default async function Page({
             db,
             questionCollection,
             answer.questionId,
-            [Query.select(["title"])]
+            // [Query.select(["title"])]
           )
         : null;
       return {
