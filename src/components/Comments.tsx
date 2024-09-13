@@ -7,10 +7,9 @@ import convertDateToRelativeTime from "@/utils/relativeTime";
 import slugify from "@/utils/slugify";
 import { IconTrash } from "@tabler/icons-react";
 import { ID, Models } from "appwrite";
-import axios from "axios";
 import Link from "next/link";
 import { Query } from "appwrite";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function Comments({
   comments: _comments,
@@ -26,7 +25,7 @@ export default function Comments({
   const [comments, setComments] = useState(_comments);
   const [newComment, setNewComment] = useState("");
   console.log(comments);
-  
+
   const { user } = useAuthStore();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -72,31 +71,6 @@ export default function Comments({
       window.alert(error?.message || "Something went wrong");
     }
   };
-
-  const queries = [Query.orderDesc("$createdAt"), Query.limit(25)];
-
-  const commentsData = async (typeId: string) => {
-    console.log(typeId);
-
-    try {
-      console.log(db, commentCollection, typeId);
-
-      const response = await databases.getDocument(
-        db,
-        commentCollection,
-        typeId
-      );
-      return response;
-    } catch (error: any) {
-      console.log("Error fetching comments", error);
-    }
-  };
-
-  // useEffect(() => {
-  //   const response = commentsData(typeId);
-
-  //   console.log(response.then((res) => res));
-  // }, []);
 
   return (
     <div className={cn("flex flex-col gap-2 pl-4", className)}>

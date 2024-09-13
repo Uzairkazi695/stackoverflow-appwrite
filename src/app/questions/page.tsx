@@ -13,21 +13,19 @@ import QuestionCard from "@/components/QuestionCard";
 import { UserPrefs } from "@/store/Auth";
 import Pagination from "@/components/Pagination";
 import Search from "./Search";
-import { account } from "@/models/client/config";
 
 const Page = async ({
   searchParams,
 }: {
   searchParams: { page?: string; tag?: string; search?: string };
 }) => {
- searchParams.page ||= "1";
-  
+  searchParams.page ||= "1";
 
   // Prepare the base query for questions
   const queries = [
     Query.orderDesc("$createdAt"),
     Query.offset((+searchParams.page - 1) * 20),
-    Query.limit(20),  
+    Query.limit(20),
   ];
 
   if (searchParams.tag) queries.push(Query.equal("tags", searchParams.tag));
@@ -37,7 +35,7 @@ const Page = async ({
         Query.search("title", searchParams.search),
         Query.search("content", searchParams.search),
       ])
-    );  
+    );
 
   const questions = await databases.listDocuments(
     db,

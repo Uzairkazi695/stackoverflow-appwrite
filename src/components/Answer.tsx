@@ -1,16 +1,12 @@
 "use client";
 
-import { avatars, databases } from "@/models/client/config";
-import { answerCollection, db } from "@/models/name";
 import { useAuthStore } from "@/store/Auth";
-import { ID, Models } from "node-appwrite";
+import { Models } from "node-appwrite";
 import RTE, { MarkdownEditor } from "./RTE";
-import slugify from "@/utils/slugify";
 import Link from "next/link";
 import { IconTrash } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Comments from "./Comments";
 import VoteButtons from "./VoteButtons";
 
 export default function Answers({
@@ -139,9 +135,7 @@ export default function Answers({
                 >
                   {/* {answer.author.name} */}
                 </Link>
-                <p>
-                  {/* <strong>{answer.author.reputation}</strong> */}
-                </p>
+                <p>{/* <strong>{answer.author.reputation}</strong> */}</p>
               </div>
             </div>
             {/* <Comments

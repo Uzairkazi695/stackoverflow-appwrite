@@ -4,7 +4,7 @@ import { db, voteCollection } from "@/models/name";
 import { databases } from "@/models/client/config";
 import { useAuthStore } from "@/store/Auth";
 import { IconCaretDownFilled, IconCaretUpFilled } from "@tabler/icons-react";
-import { ID, Models, Query } from "appwrite";
+import { Models, Query } from "appwrite";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -75,7 +75,7 @@ export default function VoteButtons({
         voteById: user.$id,
         voteStatus: "downvote",
       });
-      console.log("From here",response.data);
+      console.log("From here", response.data);
 
       if (response.data.error) {
         throw new Error(response.data.error);
