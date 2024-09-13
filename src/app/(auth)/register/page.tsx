@@ -97,7 +97,7 @@ export default function RegisterPage() {
               First name
             </Label>
             <Input
-              className="text-black"
+              className="text-white"
               id="firstname"
               name="firstname"
               placeholder="Tyler"
@@ -109,7 +109,7 @@ export default function RegisterPage() {
               last name
             </Label>
             <Input
-              className="text-black"
+              className="text-white"
               id="lastname"
               name="lastname"
               placeholder="Tyler"
@@ -123,7 +123,7 @@ export default function RegisterPage() {
               Email Address
             </Label>
             <Input
-              className="text-black"
+              className="text-white"
               id="email"
               name="email"
               placeholder="projectmayhem@fc.com"
@@ -137,7 +137,7 @@ export default function RegisterPage() {
               Password
             </Label>
             <Input
-              className="text-black"
+              className="text-white"
               id="password"
               name="password"
               placeholder="••••••••"

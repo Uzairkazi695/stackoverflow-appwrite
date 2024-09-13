@@ -2,7 +2,7 @@ import { answerCollection, db } from "@/models/name";
 import { databases, users } from "@/models/server/config";
 import { UserPrefs } from "@/store/Auth";
 import { NextRequest, NextResponse } from "next/server";
-import { ID } from "node-appwrite";
+import { ID, Query } from "node-appwrite";
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,6 +19,7 @@ export async function POST(request: NextRequest) {
         authorId: authorId,
       }
     );
+    console.log(response);
 
     // Increase author reputation
 
@@ -73,6 +74,29 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json(
       {
         error: error?.message || "Error deleting answer",
+      },
+      { status: error?.status || error?.code || 500 }
+    );
+  }
+}
+
+export async function GET(request: NextRequest) {
+  console.log("answer route");
+
+  try {
+    const { questionId } = await request.json();
+    console.log(questionId);
+    
+    const response = await databases.listDocuments(db, answerCollection, [
+      Query.equal("questionId", questionId),
+    ]);
+    console.log(response);
+
+    return NextResponse.json(response, { status: 200 });
+  } catch (error: any) {
+    return NextResponse.json(
+      {
+        error: error?.message || "Error creating answer",
       },
       { status: error?.status || error?.code || 500 }
     );
