@@ -42,9 +42,9 @@ const Layout = async ({
                 {convertDateToRelativeTime(new Date(user.$updatedAt))}
               </p>
             </div>
-            <div className="shrink-0">
+            {/* <div className="shrink-0">
               <EditButton />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

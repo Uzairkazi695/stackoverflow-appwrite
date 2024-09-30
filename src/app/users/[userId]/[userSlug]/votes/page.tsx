@@ -80,7 +80,7 @@ export default async function Page({
           </li>
           <li>
             <Link
-              href={`/users/${params.userId}/${params.userSlug}/votes?voteStatus=upvoted`}
+              href={`/users/${params.userId}/${params.userSlug}/votes?voteStatus=upvote`}
               className={`block w-full rounded-full px-3 py-0.5 duration-200 ${
                 searchParams?.voteStatus === "upvote"
                   ? "bg-white/20"
@@ -92,7 +92,7 @@ export default async function Page({
           </li>
           <li>
             <Link
-              href={`/users/${params.userId}/${params.userSlug}/votes?voteStatus=downvoted`}
+              href={`/users/${params.userId}/${params.userSlug}/votes?voteStatus=downvote`}
               className={`block w-full rounded-full px-3 py-0.5 duration-200 ${
                 searchParams?.voteStatus === "downvote"
                   ? "bg-white/20"

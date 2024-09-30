@@ -75,7 +75,6 @@ export default function VoteButtons({
         voteById: user.$id,
         voteStatus: "downvote",
       });
-      console.log("From here", response.data);
 
       if (response.data.error) {
         throw new Error(response.data.error);

@@ -45,7 +45,7 @@ export default function RegisterPage() {
     const email = formData.get("email");
     const password = formData.get("password") as string;
 
-    console.log(email);
+
 
     if (!firstname || !lastname || !email || !password) {
       setError("Please fill all fields");

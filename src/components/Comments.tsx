@@ -24,7 +24,6 @@ export default function Comments({
 }) {
   const [comments, setComments] = useState(_comments);
   const [newComment, setNewComment] = useState("");
-  console.log(comments);
 
   const { user } = useAuthStore();
 

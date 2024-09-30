@@ -18,7 +18,6 @@ export default function Answers({
 }) {
   const [answers, setAnswers] = useState(_answers);
   const [newAnswer, setNewAnswer] = useState("");
-  console.log(answers);
 
   const { user } = useAuthStore();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -74,14 +73,10 @@ export default function Answers({
   };
 
   const getAnswers = async () => {
-    console.log("From answer page");
-    console.log(questionId);
-
     try {
       const response = await axios.post(`/api/getAnswer`, {
         questionId: questionId,
       });
-      console.log(response.data);
 
       setAnswers(response.data);
     } catch (error: any) {

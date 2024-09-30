@@ -81,7 +81,7 @@ export default function LoginPage() {
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
           <Input
-            className="text-black"
+            className="text-white"
             id="email"
             name="email"
             placeholder="projectmayhem@fc.com"
@@ -91,7 +91,7 @@ export default function LoginPage() {
         <LabelInputContainer className="mb-4">
           <Label htmlFor="password">Password</Label>
           <Input
-            className="text-black"
+            className="text-white"
             id="password"
             name="password"
             placeholder="••••••••"
@@ -111,28 +111,18 @@ export default function LoginPage() {
         <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
 
         <div className="flex flex-col space-y-4">
-          <button
-            className="group/btn relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="button"
-            disabled={isLoading}
-          >
-            <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+          <div className="group/btn relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]">
             <span className="text-sm text-neutral-700 dark:text-neutral-300">
-              Google
+              Demo Email: demo@gmail.com
             </span>
             <BottomGradient />
-          </button>
-          <button
-            className="group/btn relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="button"
-            disabled={isLoading}
-          >
-            <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+          </div>
+          <div className="group/btn relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black shadow-input dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]">
             <span className="text-sm text-neutral-700 dark:text-neutral-300">
-              GitHub
+              Demo Password: 12345678
             </span>
             <BottomGradient />
-          </button>
+          </div>
         </div>
       </form>
     </div>

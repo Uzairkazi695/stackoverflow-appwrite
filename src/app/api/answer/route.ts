@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
         authorId: authorId,
       }
     );
-    console.log(response);
+  
 
     // Increase author reputation
 
@@ -81,16 +81,16 @@ export async function DELETE(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
-  console.log("answer route");
+
 
   try {
     const { questionId } = await request.json();
-    console.log(questionId);
+  
     
     const response = await databases.listDocuments(db, answerCollection, [
       Query.equal("questionId", questionId),
     ]);
-    console.log(response);
+    
 
     return NextResponse.json(response, { status: 200 });
   } catch (error: any) {

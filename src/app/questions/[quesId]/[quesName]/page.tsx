@@ -142,8 +142,7 @@ const Page = async ({
           Query.limit(1), // for optimization
         ]),
       ]);
-      console.log("From here", answers);
-      
+
       return {
         ...ques,
         totalAnswers: answers.total,
