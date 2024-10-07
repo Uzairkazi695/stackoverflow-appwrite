@@ -1,37 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Riverflow
 
-First, run the development server:
+This project is a Q&A platform for developers to ask questions, provide answers, and participate in the community by upvoting or downvoting responses. Inspired by StackOverflow, this platform is designed with simplicity, speed, and an intuitive user experience in mind.
+
+
+## Features
+
+- **Ask Questions**: Developers can post questions on various programming topics.
+- **Answer Questions**: Community members can contribute by providing answers.
+- **Voting System**: Users can upvote or downvote questions and answers based on their quality.
+- **Tagging**: Questions can be tagged with relevant keywords to make them easily searchable.
+- **User Authentication**: Secure user sign-up and login functionality.
+- **User Profiles**: Each user has a profile that displays their activity, such as questions asked, answers given, and their reputation.
+- **Search Functionality**: A powerful search feature to help users quickly find questions based on keywords or tags.
+- **Real-time Updates**: Live updates for new questions, answers, and votes.
+- **Responsive Design**: Fully responsive, works seamlessly on desktops, tablets, and mobile devices.
+
+
+
+
+
+
+## Screenshots
+
+![riverflow-homepage](./public/riverflow-homepage.png)
+![riverflow-questionpage](./public/riverflow-questionpage.png)
+![riverflow-profilepage](./public/riverflow-profilepage.png)
+
+
+## Tech Stack
+
+- **Frontend**: Next.js, Typescript, TailwindCSS, ShadCN
+- **Backend**: Appwrite (Backend-as-a-Service)
+- **State Management**: Zustand
+- **Deployment**: Vercel
+
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/Uzairkazi695/stackoverflow-appwrite
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd stackoverflow-appwrite
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+Install dependencies
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set up environment variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Start the server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# stackoverflow-appwrite
+```bash
+  npm run dev
+```
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`NEXT_PUBLIC_APPWRITE_HOST_URL`
+
+`NEXT_PUBLIC_APPWRITE_PROJECT_ID` 
+
+`APPWRITE_API_KEY`
+
+
+
+## Roadmap
+
+- Notifications: Real-time notifications for new answers or comments.
+
+- Social Sharing: Allow users to share questions or answers via social media.
+
+
+## Contributing
+
+Contributions are always welcome!
+
+
+
+
+## License
+
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
+
